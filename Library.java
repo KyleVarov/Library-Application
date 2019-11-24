@@ -8,26 +8,40 @@
 public class Library
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private String name;
 
     /**
      * Constructor for objects of class Library
      */
     public Library()
     {
-        // initialise instance variables
-        x = 0;
+        String name = this.name;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    public void RegisterOneBorrower(String name){   }
+
+    public void RegisterOneBook(String name){   }
+
+    public void DisplayBookForLoan(){}
+
+    public void DisplayBooksOnLoan(){}
+
+    public void LendOneBook (String name, int catalogueNo){}
+    
+    public void library(){}
+    
+    public void getName(){}
+    
+    public void setName(String name){}
+    
+    public void CheckSameName(String name){}
+    
+    public void addBook(){}
+    
+    public void checkInformation(int catalogueNo){}
+    
+    public void SearchBook(int catalogueNo){}
+    
+    
+    
 }

@@ -1,3 +1,4 @@
+import java.util.*;
 
 /**
  * Write a description of class Borrower here.
@@ -7,27 +8,27 @@
  */
 public class Borrower
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Borrower
-     */
+    private String name;
+    
+    private HashSet<Book> borrowedBooks = new HashSet<Book>();
+    
     public Borrower()
     {
-        // initialise instance variables
-        x = 0;
+        this.name = name;
+        this.borrowedBooks = borrowedBooks;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public void getName(){}
+    
+    public void setName(){}
+    
+    public void add(Borrower b){}
+    
+    public Borrower searchBorrower(Borrower b){
+        return b;
     }
+    
+    public void detachBook(Book b){}
+    
+    
 }

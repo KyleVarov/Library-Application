@@ -1,3 +1,4 @@
+import java.util.*;
 
 /**
  * Write a description of class Book here.
@@ -7,27 +8,33 @@
  */
 public class Book
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Book
-     */
+    private String title;
+    
+    private String author;
+    
+    private int catalogueNo;
+    
+    private Borrower borrower = new Borrower();
+   
+    
     public Book()
     {
-        // initialise instance variables
-        x = 0;
-    }
+        this.title = title;
+        this.author = author;
+        this.catalogueNo = catalogueNo;
+        this.borrower = borrower;
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    }
+    
+    public void setTitle(String t){
+        t = title;
+    }
+    
+    public String getTitle(){
+        return title;
+    }
+    
+    public void setAuthor(String a){
+        a = author;
     }
 }
