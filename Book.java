@@ -9,12 +9,9 @@ import java.util.*;
 public class Book
 {
     private String title;
-    
     private String author;
-    
     private int catalogueNo;
-    
-    private Borrower borrower = new Borrower();
+    private Borrower borrower;
    
     
     public Book()
@@ -22,19 +19,45 @@ public class Book
         this.title = title;
         this.author = author;
         this.catalogueNo = catalogueNo;
-        this.borrower = borrower;
+        
 
     }
     
+    public String toString(){
+        
+        return "title: "+ this.title +"\n"+ "author: " + this.author + 
+        "\n"+"catalogue number: "+ String.valueOf(this.catalogueNo)
+        +"\n"+ "borrower: " + this.borrower.getName();
+    }   
+    
     public void setTitle(String t){
-        t = title;
+        this.title = t;
     }
     
     public String getTitle(){
-        return title;
+        return this.title;
     }
     
     public void setAuthor(String a){
-        a = author;
+        this.author = a;
+    }
+    public String getAuthor(){
+        return this.author;
+    }
+    
+    public int getCatalogueNo(){
+        return this.catalogueNo;
+    }
+    public void setCatalogueNo(int cn){
+        this.catalogueNo = cn;
+    }
+    
+    //public Book searchBook(Book b){}
+    
+    public void attachBorrower(Borrower b){
+        this.borrower = b;
+    }
+    public void detachBorrower(){
+        this.borrower = null;
     }
 }

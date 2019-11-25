@@ -17,8 +17,12 @@ public class Library
     {
         String name = this.name;
     }
-
-    public void RegisterOneBorrower(String name){   }
+    
+    public String toString(){
+        return "Library name: " + this.name;
+    }
+    public void RegisterOneBorrower(String name){
+    }
 
     public void RegisterOneBook(String name){   }
 
@@ -28,11 +32,14 @@ public class Library
 
     public void LendOneBook (String name, int catalogueNo){}
     
-    public void library(){}
     
-    public void getName(){}
+    public String getName(){
+        return this.name;
+    }
     
-    public void setName(String name){}
+    public void setName(String name){
+        this.name = name;
+    }
     
     public void CheckSameName(String name){}
     
