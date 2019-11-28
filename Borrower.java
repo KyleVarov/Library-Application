@@ -26,10 +26,6 @@ public class Borrower
         this.name = name;
     }
 
-    public void add(Borrower b){
-        //hashset?
-    }
-
     public Borrower searchBorrower(Borrower b){
         return b; //먼저 hashset을 검색해야 된다.
     }

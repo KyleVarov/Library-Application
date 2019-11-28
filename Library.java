@@ -45,9 +45,21 @@ public class Library
 
     public void DisplayBooksOnLoan(){}
 
-    public void LendOneBook (String name, int catalogueNo){}
-    
-    
+    public void LendOneBook (String name, int catalogueNo){
+        Book book = this.findBook(catalogueNo);
+        Borrower borrower = this.findBorrower(name);
+        if(book!=null&& borrower!= null){
+            book.attachBorrower(book);
+            borrower.attachBook(borrower);
+        }
+        else if(book == null){
+            System.out.println("책을 찾을 수 없음");
+        }
+        else if(borrower == null){
+            System.out.println("이용자를 찾을 수 없음");
+        }
+    }
+   
     public String getName(){
         return this.name;
     }
@@ -59,6 +71,10 @@ public class Library
     public void CheckSameName(String name){}
     
     public void addBook(){}
+    
+    public void addBorrower(Borrower b){
+        //hashset?
+    }
     
     public void checkInformation(int catalogueNo){}
     
