@@ -12,7 +12,6 @@ public class Book
     private String author;
     private int catalogueNo;
     private Borrower borrower;
-   
     
     public Book()
     {
@@ -48,6 +47,7 @@ public class Book
     public int getCatalogueNo(){
         return this.catalogueNo;
     }
+    
     public void setCatalogueNo(int cn){
         this.catalogueNo = cn;
     }

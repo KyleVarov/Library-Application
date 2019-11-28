@@ -1,3 +1,4 @@
+import java.util.*;
 
 /**
  * Write a description of class Library here.
@@ -21,10 +22,11 @@ public class Library
     public String toString(){
         return "Library name: " + this.name;
     }
+    
     public void RegisterOneBorrower(String name){
     }
 
-    public void RegisterOneBook(String name){   }
+    public void RegisterOneBook(String name){}
 
     public void DisplayBookForLoan(){}
 
