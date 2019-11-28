@@ -14,7 +14,7 @@ public class Book
     private Borrower borrower;
    
     
-    public Book()
+    public Book(String title, String author,int catalogueNo)
     {
         this.title = title;
         this.author = author;

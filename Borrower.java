@@ -13,7 +13,7 @@ public class Borrower
     private LinkedList<Book> borrowedBooks = new LinkedList<Book>();
     
     
-    public Borrower()
+    public Borrower(String name)
     {
         this.name = name;
     }
