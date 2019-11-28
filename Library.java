@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class Library here.
  *
@@ -10,6 +10,8 @@ public class Library
     // instance variables - replace the example below with your own
     private String name;
 
+    private TreeSet<Book> registeresBook;
+    private HashSet<Borrower> registeredBorrowers;
     /**
      * Constructor for objects of class Library
      */

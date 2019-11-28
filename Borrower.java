@@ -11,13 +11,11 @@ public class Borrower
     // Borrower class 자체가 HashSet인가 아니면 HashSet을 가지고 있나??
     private String name;
     private LinkedList<Book> borrowedBooks = new LinkedList<Book>();
-    //private HashSet<Book> borrowedBooks = new HashSet<Book>();
     
     
     public Borrower()
     {
         this.name = name;
-        //this.borrowedBooks = borrowedBooks;
     }
 
     public String getName(){
