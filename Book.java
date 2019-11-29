@@ -13,7 +13,7 @@ public class Book
     private int catalogueNo;
     private Borrower borrower;
     
-    public Book()
+    public Book(String title, String author,int catalogueNo)
     {
         this.title = title;
         this.author = author;
@@ -28,6 +28,11 @@ public class Book
         "\n"+"catalogue number: "+ String.valueOf(this.catalogueNo)
         +"\n"+ "borrower: " + this.borrower.getName();
     }   
+    
+    public String display(){
+        return "title: "+ this.title +"\n"+ "author: " + this.author + 
+        "\n"+"catalogue number: "+ String.valueOf(this.catalogueNo);
+    }
     
     public void setTitle(String t){
         this.title = t;
@@ -52,12 +57,14 @@ public class Book
         this.catalogueNo = cn;
     }
     
-    //public Book searchBook(Book b){}
-    
     public void attachBorrower(Borrower b){
         this.borrower = b;
     }
     public void detachBorrower(){
         this.borrower = null;
+    }
+    
+    public Borrower getBorrower(){
+        return borrower;
     }
 }
