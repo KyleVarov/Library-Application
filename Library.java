@@ -2,10 +2,10 @@
 import java.util.*;
 
 /**
- * Write a description of class Library here.
+ * Library 클래스는 여러 가지 책을 가지고 있고 Borrower한테는 그 책들을 대출 및 반납하는 서비스를 제공하는 역할을 한다.
  *
  * @author (오시반데 관주2017630153, 테오 켄신2018771052, 호즈미 요시아키2018315054, 스피겔 크릴 2017605038)
- * @version (2019-11-29)
+ * @version (2019-12-03)
  */
 public class Library
 {

@@ -2,10 +2,10 @@
 import java.util.*;
 
 /**
- * Write a description of class Book here.
+ * Borrower 클래스는 책을 대출할 수 있고 반납할 수 있는 대출자이다. 
  *
  * @author (오시반데 관주2017630153, 테오 켄신2018771052, 호즈미 요시아키2018315054, 스피겔 크릴 2017605038)
- * @version (2019-11-29)
+ * @version (2019-12-03)
  */
 
 public class Borrower
