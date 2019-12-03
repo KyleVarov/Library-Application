@@ -13,6 +13,8 @@ public class Library
     public TreeSet<Book> registeredBook;
 
     public HashSet<Borrower> registeredBorrowers;
+    
+    public TreeSet<Loan> bookLoans;
 
     /**
 
@@ -94,17 +96,26 @@ public class Library
     }
 
     public void ReturnOneBook(String name, int catalogueNo){
-        Book book = this.searchBook(catalogueNo);
-        Borrower borrower = this.searchBorrower(name);
-        if(book!=null&& borrower!= null){
-            book.detachLoan();
-            borrower.detachLoan();
-        }
-        else if(book == null){
-            System.out.println("책을 찾을 수 없음");
-        }
-        else if(borrower == null){
-            System.out.println("이용자를 찾을 수 없음");
+        // Book book = this.searchBook(catalogueNo);
+        // Borrower borrower = this.searchBorrower(name);
+        // if(book!=null&& borrower!= null){
+            // book.detachLoan();
+            // borrower.detachLoan();
+        // }
+        // else if(book == null){
+            // System.out.println("책을 찾을 수 없음");
+        // }
+        // else if(borrower == null){
+            // System.out.println("이용자를 찾을 수 없음");
+        // }
+        Iterator it = bookLoans.iterator();
+        Loan loan = searchForLoan(catalogueNo);
+        if (loan == null){
+            System.out.println("Loan Object could not be found");
+        }else{
+            loan.getBook().detachLoan();
+            loan.getBorrower().detachLoan();
+            System.out.println("'"+loan.getBook().getTitle()+"' has been returned"); 
         }
     }
 
@@ -200,6 +211,20 @@ public class Library
         return borrowerFound;
 
     }
-
+    public void addLoanToCollection(Loan loan){
+        bookLoans.add(loan);
+    }
+    public Loan searchForLoan(int catalogueNo){
+        Iterator it = bookLoans.iterator();
+        Loan loan = null;
+        while(it.hasNext()){
+            Loan searchloan = (Loan)it.next();
+            if(loan.getBook().getCatalogueNo() == catalogueNo){
+                loan = searchloan;
+                break;
+            }
+        }
+        return loan;
+    }
 }
  
