@@ -13,6 +13,8 @@ public class Library
     public TreeSet<Book> registeredBook;
 
     public HashSet<Borrower> registeredBorrowers;
+    
+    public TreeSet<Loan> bookLoans;
 
     /**
 
@@ -94,18 +96,28 @@ public class Library
     }
 
     public void ReturnOneBook(String name, int catalogueNo){
-        Book book = this.searchBook(catalogueNo);
-        Borrower borrower = this.searchBorrower(name);
-        if(book!=null&& borrower!= null){
-            book.detachLoan();
-            borrower.detachLoan();
+        // Book book = this.searchBook(catalogueNo);
+        // Borrower borrower = this.searchBorrower(name);
+        // if(book!=null&& borrower!= null){
+            // book.detachLoan();
+            // borrower.detachLoan();
+        // }
+        // else if(book == null){
+            // System.out.println("책을 찾을 수 없음");
+        // }
+        // else if(borrower == null){
+            // System.out.println("이용자를 찾을 수 없음");
+        // }
+        Iterator it = bookLoans.iterator();
+        Loan loan = null;
+        while(it.hasNext()){
+            loan = (Loan)it.next();
+            if(loan.getBook().getCatalogueNo() == catalogueNo){
+                break;
+            }
         }
-        else if(book == null){
-            System.out.println("책을 찾을 수 없음");
-        }
-        else if(borrower == null){
-            System.out.println("이용자를 찾을 수 없음");
-        }
+        loan.getBook().detachLoan();
+        loan.getBorrower().detachLoan();
     }
 
     public String getName(){
@@ -200,6 +212,8 @@ public class Library
         return borrowerFound;
 
     }
-
+    public void addLoanToCollection(Loan loan){
+        bookLoans.add(loan);
+    }
 }
  

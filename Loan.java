@@ -17,6 +17,7 @@ public class Loan
     private Book book;
 
     private Borrower borrower;
+    
 
     public Loan(String borrowd, String returnd, Book b, Borrower borrower)
     {
