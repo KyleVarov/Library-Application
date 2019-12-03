@@ -33,7 +33,7 @@ public class Borrower
         this.name = name;
     }
 
-    public void AttachLoan(Loan l){
+    public void attachLoan(Loan l){
         this.loanedBooks.add(l);
 
     }

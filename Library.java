@@ -100,7 +100,7 @@ public class Library
             newLoan.setBorrower(borrower);
             newLoan.setBook(book);
             book.attachLoan(newLoan);
-            borrower.AttachLoan(newLoan);
+            borrower.attachLoan(newLoan);
             bookLoans.add(newLoan);
             System.out.println("'"+ book.getTitle()+"' has been borrowed");
             
