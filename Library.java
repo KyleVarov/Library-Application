@@ -99,7 +99,7 @@ public class Library
             Loan newLoan = new Loan(borrowDate, returnDate, book, borrower);
             newLoan.setBorrower(borrower);
             newLoan.setBook(book);
-            book.AttachLoan(newLoan);
+            book.attachLoan(newLoan);
             borrower.AttachLoan(newLoan);
             bookLoans.add(newLoan);
             System.out.println("'"+ book.getTitle()+"' has been borrowed");

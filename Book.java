@@ -11,7 +11,6 @@ public class Book implements Comparable<Book>
     private String title;
     private String author;
     private int catalogueNo;
-    private Borrower borrower;
     private Loan loan;
 
     public Book(String title, String author,int catalogueNo)
@@ -26,15 +25,7 @@ public class Book implements Comparable<Book>
 
     }
 
-    public String toString(){
-
-        return "title: "+ this.title +"\n"+ "author: " + this.author +
-
-        "\n"+"catalogue number: "+ String.valueOf(this.catalogueNo)
-
-        +"\n"+ "borrower: " + this.borrower.getName();
-
-    }  
+    
 
     public String display(){
         return "title: "+ this.title +"\n"+ "author: " + this.author +
@@ -73,11 +64,7 @@ public class Book implements Comparable<Book>
 
     }
 
-    public void attachBorrower(Borrower b){
-        this.borrower = b;
-    }
-
-    public void AttachLoan(Loan l){
+    public void attachLoan(Loan l){ 
         this.loan = l;
     }
 
