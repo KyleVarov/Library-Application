@@ -87,7 +87,6 @@ public class Book implements Comparable<Book>
 
     public Loan getLoanInfo(){
         return this.loan;
-
     }
     
     public int compareTo(Book other){

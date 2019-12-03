@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Book here.
+ * Loan 클래스는 대출에 대한 정보를 가지며 Borrower와 Book 객체를 서로 연결하는 클래스이다. 
  *
  * @author (오시반데 관주2017630153, 테오 켄신2018771052, 호즈미 요시아키2018315054, 키릴)
  * @version (2019-11-29)
