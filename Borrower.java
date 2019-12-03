@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * Write a description of class Book here.
  *
- * @author (오시반데 관주2017630153, 테오 켄신2018771052, 호즈미 요시아키2018315054, 키릴)
+ * @author (오시반데 관주2017630153, 테오 켄신2018771052, 호즈미 요시아키2018315054, 스피겔 크릴 2017605038)
  * @version (2019-11-29)
  */
 
@@ -14,9 +14,9 @@ public class Borrower
 
     private String name;
 
-    private LinkedList<Book> borrowedBooks = new LinkedList<Book>();
+    private LinkedList<Loan> loanedBooks = new LinkedList<Loan>();
 
-    private Loan loan;
+    
 
     public Borrower(String name)
     {
@@ -33,19 +33,16 @@ public class Borrower
         this.name = name;
     }
 
-    public void AttachLoan(Loan l){
-        this.loan = l;
+    public void attachLoan(Loan l){
+        this.loanedBooks.add(l);
 
     }
 
-    public void detachLoan(){
-        this.loan = null;
+    public void detachLoan(Loan l){
+        this.loanedBooks.remove(l);
     }
 
-    public Loan getLoanInfo(){
-        return this.loan;
-
-    }
+    
 
 }
 

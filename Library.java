@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * Write a description of class Library here.
  *
- * @author (오시반데 관주2017630153, 테오 켄신2018771052, 호즈미 요시아키2018315054, 키릴)
+ * @author (오시반데 관주2017630153, 테오 켄신2018771052, 호즈미 요시아키2018315054, 스피겔 크릴 2017605038)
  * @version (2019-11-29)
  */
 public class Library
@@ -99,8 +99,8 @@ public class Library
             Loan newLoan = new Loan(borrowDate, returnDate, book, borrower);
             newLoan.setBorrower(borrower);
             newLoan.setBook(book);
-            book.AttachLoan(newLoan);
-            borrower.AttachLoan(newLoan);
+            book.attachLoan(newLoan);
+            borrower.attachLoan(newLoan);
             bookLoans.add(newLoan);
             System.out.println("'"+ book.getTitle()+"' has been borrowed");
             
@@ -123,7 +123,7 @@ public class Library
             System.out.println("Loan Object could not be found");
         }else{
             loan.getBook().detachLoan();
-            loan.getBorrower().detachLoan();
+            loan.getBorrower().detachLoan(loan);
             System.out.println("'"+loan.getBook().getTitle()+"' has been returned"); 
         }
 
