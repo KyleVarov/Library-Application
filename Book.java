@@ -12,14 +12,13 @@ public class Book
     private String author;
     private int catalogueNo;
     private Borrower borrower;
+    private Loan loan;
     
     public Book(String title, String author,int catalogueNo)
     {
         this.title = title;
         this.author = author;
         this.catalogueNo = catalogueNo;
-        
-
     }
     
     public String toString(){
@@ -60,11 +59,17 @@ public class Book
     public void attachBorrower(Borrower b){
         this.borrower = b;
     }
-    public void detachBorrower(){
-        this.borrower = null;
+
+    public void AttachLoan(Loan l){
+        this.loan = l;
     }
     
-    public Borrower getBorrower(){
-        return borrower;
+    public void detachLoan(){
+        this.loan = null;
     }
+
+    public Loan getLoanInfo(){
+        return this.loan;
+    }
+
 }

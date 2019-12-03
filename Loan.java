@@ -34,13 +34,13 @@ public class Loan
     public void setBook(Book book){
         this.book = book;
     }
+    
     public Borrower getBorrower(){
         return this.borrower;
     }
+    
     public void setBorrower(Borrower borrower){
         this.borrower = borrower;
     }
-    
-    //public Loan searchLoan(Loan l){}
     
 }

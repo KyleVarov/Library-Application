@@ -12,8 +12,8 @@ public class Borrower
     // Borrower class 자체가 HashSet인가 아니면 HashSet을 가지고 있나??
     private String name;
     private LinkedList<Book> borrowedBooks = new LinkedList<Book>();
-    
-    
+    private Loan loan;
+
     public Borrower(String name)
     {
         this.name = name;
@@ -26,12 +26,17 @@ public class Borrower
     public void setName(){
         this.name = name;
     }
-    
-    public void attachBook(Book b){
-        borrowedBooks.add(b);
+
+    public void AttachLoan(Loan l){
+        this.loan = l;
     }
-    public void detachBook(Book b){
-        borrowedBooks.remove(b);
+
+    public void detachLoan(){
+        this.loan = null;
+    }
+
+    public Loan getLoanInfo(){
+        return this.loan;
     }
 
 }
