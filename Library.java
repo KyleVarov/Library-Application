@@ -55,6 +55,7 @@ public class Library
         else{
             Book newBook = new Book(title,author,catalogueNo);
             addBook(newBook);
+            System.out.println("'"+ newBook.getTitle() + "' has been successfully added.");
         }
     }
 
@@ -101,19 +102,20 @@ public class Library
             book.AttachLoan(newLoan);
             borrower.AttachLoan(newLoan);
             bookLoans.add(newLoan);
+            // book has been borrowed message!!
         }
 
         else if(book == null){
-            System.out.println("책을 찾을 수 없음");
+            System.out.println("책을 찾을 수 없음"); //change to english
         }
 
         else if(borrower == null){
-            System.out.println("이용자를 찾을 수 없음");
+            System.out.println("이용자를 찾을 수 없음"); //change to english
         }
 
     }
 
-    public void ReturnOneBook(int catalogueNo){
+    public void ReturnOneBook(int catalogueNo){ //write small r 
 
         Loan loan = searchForLoan(catalogueNo);
         if (loan == null){
