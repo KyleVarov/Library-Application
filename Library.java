@@ -15,7 +15,7 @@ public class Library
 
     public HashSet<Borrower> registeredBorrowers;
     
-    public TreeSet<Loan> bookLoans;
+    public HashSet<Loan> bookLoans;
 
     /**
 
@@ -30,7 +30,7 @@ public class Library
         String name = this.name;
         registeredBorrowers = new HashSet<Borrower>();
         registeredBook = new TreeSet<Book>();
-        bookLoans = new TreeSet<Loan>();
+        bookLoans = new HashSet<Loan>();
     }
 
     public String toString(){
@@ -60,7 +60,7 @@ public class Library
 
             if(book.getLoanInfo() == null){
 
-                book.display();
+                System.out.println(book.display()+"\n"+"----------------");
 
             }
 
@@ -73,7 +73,9 @@ public class Library
         while(it.hasNext()){
             Book book = (Book)it.next();
             if(book.getLoanInfo() != null){
-                book.display();
+                System.out.println(book.display());
+                System.out.println("borrower: " + book.getLoanInfo().getBorrower().getName());
+                System.out.println("----------------");
             }
         }
     }
@@ -218,9 +220,9 @@ public class Library
         Iterator it = bookLoans.iterator();
         Loan loan = null;
         while(it.hasNext()){
-            Loan searchloan = (Loan)it.next();
-            if(loan.getBook().getCatalogueNo() == catalogueNo){
-                loan = searchloan;
+            Loan searchLoan = (Loan)it.next();
+            if(searchLoan.getBook().getCatalogueNo() == catalogueNo){
+                loan = searchLoan;
                 break;
             }
         }
