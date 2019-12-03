@@ -37,9 +37,9 @@ public class Library
         return "Library name: " + this.name;
     }
 
-    public void RegisterOneBorrower(String name){
+    public void registerOneBorrower(String name){
         if ((registeredBorrowers.size()) > 0){
-            CheckSameName(name);
+            checkSameName(name);
         }
         else{
             Borrower newBorrower = new Borrower(name);
@@ -48,7 +48,7 @@ public class Library
         }
     }
 
-    public void RegisterOneBook(String title, String author,int catalogueNo){
+    public void registerOneBook(String title, String author,int catalogueNo){
         if ((registeredBook.size()) > 0){
             checkInformation(title,author,catalogueNo);
         }
@@ -59,7 +59,7 @@ public class Library
         }
     }
 
-    public void DisplayBookForLoan(){
+    public void displayBookForLoan(){
 
         Iterator it = registeredBook.iterator();
 
@@ -77,7 +77,7 @@ public class Library
 
     }
 
-    public void DisplayBooksOnLoan(){
+    public void displayBooksOnLoan(){
         Iterator it = registeredBook.iterator();
         while(it.hasNext()){
             Book book = (Book)it.next();
@@ -89,7 +89,7 @@ public class Library
         }
     }
 
-    public void LendOneBook (String name, int catalogueNo, String borrowDate, String returnDate){
+    public void lendOneBook (String name, int catalogueNo, String borrowDate, String returnDate){
 
         Book book = this.searchBook(catalogueNo);
 
@@ -102,20 +102,21 @@ public class Library
             book.AttachLoan(newLoan);
             borrower.AttachLoan(newLoan);
             bookLoans.add(newLoan);
-            // book has been borrowed message!!
+            System.out.println("'"+ book.getTitle()+"' has been borrowed");
+            
         }
 
         else if(book == null){
-            System.out.println("책을 찾을 수 없음"); //change to english
+            System.out.println("book cannot be found");
         }
 
         else if(borrower == null){
-            System.out.println("이용자를 찾을 수 없음"); //change to english
+            System.out.println("borrower cannot be found"); 
         }
 
     }
 
-    public void ReturnOneBook(int catalogueNo){ //write small r 
+    public void returnOneBook(int catalogueNo){  
 
         Loan loan = searchForLoan(catalogueNo);
         if (loan == null){
@@ -138,12 +139,12 @@ public class Library
         this.name = name;
     }
 
-    public void CheckSameName(String name){
+    public void checkSameName(String name){
         Iterator it = registeredBorrowers.iterator();
         while(it.hasNext()){
             Borrower borrower = (Borrower)it.next();
             if(borrower.getName() == name){
-                System.out.println("이미 등록한 대체자이다");
+                System.out.println("Borrower is already registered");
                 break;
             }
             else{
@@ -168,7 +169,7 @@ public class Library
         while(it.hasNext()){
             Book book = (Book)it.next();
             if(book.getCatalogueNo() == catalogueNo){
-                System.out.println("이미 등록한 책이다");
+                System.out.println("book is already registered");
                 break;
             }
             else{
