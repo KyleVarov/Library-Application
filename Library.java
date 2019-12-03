@@ -109,15 +109,14 @@ public class Library
             // System.out.println("이용자를 찾을 수 없음");
         // }
         Iterator it = bookLoans.iterator();
-        Loan loan = null;
-        while(it.hasNext()){
-            loan = (Loan)it.next();
-            if(loan.getBook().getCatalogueNo() == catalogueNo){
-                break;
-            }
+        Loan loan = searchForLoan(catalogueNo);
+        if (loan == null){
+            System.out.println("Loan Object could not be found");
+        }else{
+            loan.getBook().detachLoan();
+            loan.getBorrower().detachLoan();
+            System.out.println("'"+loan.getBook().getTitle()+"' has been returned"); 
         }
-        loan.getBook().detachLoan();
-        loan.getBorrower().detachLoan();
     }
 
     public String getName(){
@@ -214,6 +213,18 @@ public class Library
     }
     public void addLoanToCollection(Loan loan){
         bookLoans.add(loan);
+    }
+    public Loan searchForLoan(int catalogueNo){
+        Iterator it = bookLoans.iterator();
+        Loan loan = null;
+        while(it.hasNext()){
+            Loan searchloan = (Loan)it.next();
+            if(loan.getBook().getCatalogueNo() == catalogueNo){
+                loan = searchloan;
+                break;
+            }
+        }
+        return loan;
     }
 }
  
