@@ -44,6 +44,7 @@ public class Library
         else{
             Borrower newBorrower = new Borrower(name);
             addBorrower(newBorrower);
+            System.out.println("'"+ newBorrower.getName() + "' has been successfully added.");
         }
     }
 
