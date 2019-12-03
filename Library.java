@@ -123,7 +123,7 @@ public class Library
             System.out.println("Loan Object could not be found");
         }else{
             loan.getBook().detachLoan();
-            loan.getBorrower().detachLoan();
+            loan.getBorrower().detachLoan(loan);
             System.out.println("'"+loan.getBook().getTitle()+"' has been returned"); 
         }
 

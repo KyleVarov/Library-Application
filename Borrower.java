@@ -14,9 +14,9 @@ public class Borrower
 
     private String name;
 
-    private LinkedList<Book> borrowedBooks = new LinkedList<Book>();
+    private LinkedList<Loan> loanedBooks = new LinkedList<Loan>();
 
-    private Loan loan;
+    
 
     public Borrower(String name)
     {
@@ -34,18 +34,15 @@ public class Borrower
     }
 
     public void AttachLoan(Loan l){
-        this.loan = l;
+        this.loanedBooks.add(l);
 
     }
 
-    public void detachLoan(){
-        this.loan = null;
+    public void detachLoan(Loan l){
+        this.loanedBooks.remove(l);
     }
 
-    public Loan getLoanInfo(){
-        return this.loan;
-
-    }
+    
 
 }
 
