@@ -2,16 +2,20 @@
 import java.util.*;
 
 /**
- * Write a description of class Borrower here.
+ * Write a description of class Book here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (오시반데 관주2017630153, 테오 켄신2018771052, 호즈미 요시아키2018315054, 키릴)
+ * @version (2019-11-29)
  */
+
 public class Borrower
+
 {
-    // Borrower class 자체가 HashSet인가 아니면 HashSet을 가지고 있나??
+
     private String name;
+
     private LinkedList<Book> borrowedBooks = new LinkedList<Book>();
+
     private Loan loan;
 
     public Borrower(String name)
@@ -20,7 +24,9 @@ public class Borrower
     }
 
     public String getName(){
+
         return this.name;
+
     }
 
     public void setName(){
@@ -29,6 +35,7 @@ public class Borrower
 
     public void AttachLoan(Loan l){
         this.loan = l;
+
     }
 
     public void detachLoan(){
@@ -37,6 +44,8 @@ public class Borrower
 
     public Loan getLoanInfo(){
         return this.loan;
+
     }
 
 }
+
