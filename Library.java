@@ -14,7 +14,7 @@ public class Library
     public TreeSet<Book> registeredBook;
 
     public HashSet<Borrower> registeredBorrowers;
-    
+
     public HashSet<Loan> bookLoans;
 
     /**
@@ -41,13 +41,20 @@ public class Library
         if ((registeredBorrowers.size()) > 0){
             CheckSameName(name);
         }
-        Borrower newBorrower = new Borrower(name);
-        registeredBorrowers.add(newBorrower);
+        else{
+            Borrower newBorrower = new Borrower(name);
+            addBorrower(newBorrower);
+        }
     }
 
     public void RegisterOneBook(String title, String author,int catalogueNo){
-        Book book = new Book(title,author,catalogueNo);
-        registeredBook.add(book);
+        if ((registeredBook.size()) > 0){
+            checkInformation(title,author,catalogueNo);
+        }
+        else{
+            Book newBook = new Book(title,author,catalogueNo);
+            addBook(newBook);
+        }
     }
 
     public void DisplayBookForLoan(){
@@ -79,7 +86,7 @@ public class Library
             }
         }
     }
-    
+
     public void LendOneBook (String name, int catalogueNo, String borrowDate, String returnDate){
 
         Book book = this.searchBook(catalogueNo);
@@ -106,7 +113,7 @@ public class Library
     }
 
     public void ReturnOneBook(int catalogueNo){
-        
+
         Loan loan = searchForLoan(catalogueNo);
         if (loan == null){
             System.out.println("Loan Object could not be found");
@@ -115,7 +122,7 @@ public class Library
             loan.getBorrower().detachLoan();
             System.out.println("'"+loan.getBook().getTitle()+"' has been returned"); 
         }
-        
+
     }
 
     public String getName(){
@@ -137,12 +144,13 @@ public class Library
                 break;
             }
             else{
-                
+
                 addBorrower(new Borrower(name));
                 break;
             }
         }
     }
+
     public void addBook(Book b){
         registeredBook.add(b);
 
@@ -153,15 +161,15 @@ public class Library
     }
 
     public void checkInformation(String title, String author,int catalogueNo){
-        Iterator it = registeredBorrowers.iterator();
+        Iterator it = registeredBook.iterator();
         while(it.hasNext()){
             Book book = (Book)it.next();
             if(book.getCatalogueNo() == catalogueNo){
-                addBook(new Book(title,author,catalogueNo));
+                System.out.println("이미 등록한 책이다");
                 break;
             }
             else{
-                System.out.println("이미 등록한 책이다");
+                addBook(new Book(title,author,catalogueNo));
                 break;
 
             }
@@ -211,11 +219,11 @@ public class Library
         return borrowerFound;
 
     }
-    
+
     public void addLoanToCollection(Loan loan){
         bookLoans.add(loan);
     }
-    
+
     public Loan searchForLoan(int catalogueNo){
         Iterator it = bookLoans.iterator();
         Loan loan = null;
@@ -229,4 +237,4 @@ public class Library
         return loan;
     }
 }
- 
+
