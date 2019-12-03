@@ -28,7 +28,9 @@ public class Library
     {
 
         String name = this.name;
-
+        registeredBorrowers = new HashSet<Borrower>();
+        registeredBook = new TreeSet<Book>();
+        bookLoans = new TreeSet<Loan>();
     }
 
     public String toString(){
@@ -36,8 +38,11 @@ public class Library
     }
 
     public void RegisterOneBorrower(String name){
-        CheckSameName(name);
-
+        if ((registeredBorrowers.size()) > 0){
+            CheckSameName(name);
+        }
+        Borrower newBorrower = new Borrower(name);
+        registeredBorrowers.add(newBorrower);
     }
 
     public void RegisterOneBook(String title, String author,int catalogueNo){
@@ -84,6 +89,7 @@ public class Library
             newLoan.setBook(book);
             book.AttachLoan(newLoan);
             borrower.AttachLoan(newLoan);
+            bookLoans.add(newLoan);
         }
 
         else if(book == null){
@@ -124,11 +130,12 @@ public class Library
         while(it.hasNext()){
             Borrower borrower = (Borrower)it.next();
             if(borrower.getName() == name){
-                addBorrower(new Borrower(name));
+                System.out.println("이미 등록한 대체자이다");
                 break;
             }
             else{
-                System.out.println("이미 등록한 대체자이다");
+                
+                addBorrower(new Borrower(name));
                 break;
             }
         }
@@ -192,7 +199,7 @@ public class Library
 
             if(borrower.getName() == name){
 
-                return borrower = borrowerFound;
+                return borrowerFound = borrower;
 
             }
 

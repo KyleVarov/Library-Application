@@ -6,7 +6,7 @@
  * @version (2019-11-29)
  */
 
-public class Loan
+public class Loan 
 
 {
 
