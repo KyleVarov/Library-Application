@@ -6,7 +6,7 @@ import java.util.*;
  * @author (오시반데 관주2017630153, 테오 켄신2018771052, 호즈미 요시아키2018315054, 키릴)
  * @version (2019-11-29)
  */
-public class Book
+public class Book implements Comparable<Book>
 {
     private String title;
     private String author;
@@ -89,6 +89,9 @@ public class Book
         return this.loan;
 
     }
-
+    
+    public int compareTo(Book other){
+        return Integer.compare(this.catalogueNo, other.catalogueNo);
+    }
 }
 
